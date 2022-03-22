@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/toastText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="136dp"
+        android:text="SignUp"
+        android:textSize="34sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/mName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Enter Your Name"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/toastText"
+        tools:layout_editor_absoluteX="46dp" />
+
+    <EditText
+        android:id="@+id/mAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Enter Your Age"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/mName"
+        app:layout_constraintTop_toBottomOf="@+id/mName" />
+
+    <EditText
+        android:id="@+id/mBio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Your Bio"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="@+id/mAge"
+        app:layout_constraintTop_toBottomOf="@+id/mAge" />
+
+    <EditText
+        android:id="@+id/mPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Enter Your Mobile No."
+        android:inputType="phone"
+        app:layout_constraintStart_toStartOf="@+id/mBio"
+        app:layout_constraintTop_toBottomOf="@+id/mBio" />
+
+    <EditText
+        android:id="@+id/mLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Enter Your Location"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/mPhone"
+        app:layout_constraintTop_toBottomOf="@+id/mPhone" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="32dp"
+        android:text="Sign Up"
+        app:layout_constraintStart_toStartOf="@+id/mLocation"
+        app:layout_constraintTop_toBottomOf="@+id/mLocation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
