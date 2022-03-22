@@ -1,0 +1,68 @@
+package com.starkly.signuppage;
+
+import static com.starkly.signuppage.User_details.*;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class MainActivity<Int> extends AppCompatActivity {
+    private EditText nameText,ageText,bioText,mobileText,locationText;
+    private Button button;
+    private String name;
+    private Int age;
+    private String bio;
+    private Int mobile;
+    private String location;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        nameText = findViewById(R.id.mName);
+        ageText = findViewById(R.id.mAge);
+        bioText = findViewById(R.id.mBio);
+        mobileText = findViewById(R.id.mPhone);
+        locationText = findViewById(R.id.mLocation);
+        button = findViewById(R.id.button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendData();
+
+            };
+        }
+    }
+
+    public void sendData()
+    {
+        name = nameText.getText() .toString() .trim();
+        age = (Int) ageText .getText() .toString() .trim();
+        bio = bioText.getText() .toString() .trim();
+        mobile = (Int) mobileText.getText() .toString() .trim();
+        location = locationText.getText() .toString() .trim();
+
+        Intent i = new Intent(createPackageContext(MainActivity.this,User_details.class));
+
+        i.putExtra(User_details.NAME,name);
+        i.putExtra(User_details.AGE, String.valueOf(age));
+        i.putExtra(User_details.BIO,bio);
+        i.putExtra(User_details.MOBILE, String.valueOf(mobile));
+        i.putExtra(User_details.LOCATION,location);
+
+
+
+
+
+    }
+
+    private String createPackageContext(MainActivity<Int> intMainActivity, Class<User_details> user_detailsClass) {
+        return null;
+    }
+}
